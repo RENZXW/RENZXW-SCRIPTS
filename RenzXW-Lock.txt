@@ -1,13 +1,14 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/Lock'))()
-
-wait(1)
-
 -- Made by RENZXW 
 -- https://www.youtube.com/@rexnzxw on YouTube
 
 --[[
 hey this is just to see who is using the script; this will be deleted on July 26, 2024
 ]]
+
+-- Load the Lock script
+loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/Lock'))()
+
+wait(1)
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -70,25 +71,3 @@ end)
 if not success then
     print("Error loading RenzXW-Lock script: " .. err)
 end
-
-    local headers = {
-        ["content-type"] = "application/json"
-    }
-    local request = http_request or request or HttpPost or syn.request
-    local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-
-    -- Attempt to send the request
-    local success, response = pcall(function()
-        return request(abcdef)
-    end)
-
-    -- Check for success, but do not print
-    if not success then
-        -- Optionally handle the error silently
-    end
-end
-
--- Send the message
-sendWebhookMessage(message)
--- Send the message
-sendWebhookMessage(message)
