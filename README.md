@@ -3,9 +3,6 @@ NPC WALK
 watch it in my YOUTUBE (REXNZXW) 
 
 # RenzXW CAMLOCK is now out! #
-not friendly don't add it
-
-Got it! Here’s a straightforward technical breakdown of the **RenzXW CAMLOCK** script without any friendly or promotional language.
 
 ---
 
