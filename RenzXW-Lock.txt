@@ -1,1 +1,2 @@
-print("updating..")
+loadstring(game:HttpGet('https://github.com/RENZXW/RENZXW-SCRIPTS/blob/main/Extra'))()
+loadstring(game:HttpGet('https://github.com/RENZXW/RENZXW-SCRIPTS/blob/main/Lock'))()
