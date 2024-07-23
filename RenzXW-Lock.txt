@@ -3,9 +3,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS
 wait(1) 
 
 --[[
-hey this is just to see who using the script this will be deleted in July 26 2024 if you don't want this just copy the one on the top don't worry
+hey this is just to see who is using the script; this will be deleted on July 26, 2024 don't worry if you don't want this copy the one on the top this is just to see someone who using my scripts
 ]]
-
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
@@ -21,23 +20,10 @@ local webhookcheck =
 
 local url = "https://discord.com/api/webhooks/1264855302440878100/4XKNRzAAu61cJcGP9wLJ6PoEQYeIzSyIXQqcpd5AnyPNWHRe1tinWWJYhQaoBtBWOYvn"
 
--- Create a list of messages
-local messages = {
-    "Exploit detected: " .. webhookcheck,
-    "# 🤝RENZXW CAMLOCK SCRIPT USER🤝: #",
-    "`Username: " .. LocalPlayer.Name .. "`",
-    "`DisplayName: " .. LocalPlayer.DisplayName .. "`",
-    LocalPlayer.Name .. " IS THE OP",
-    "He executed the renzxw lock.",
-    "He cool asf.",
-    "Join em.",
-    "Script:",
-    "`game:GetService('TeleportService'):TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "')`",
-    "Game:",
-    "https://www.roblox.com/games/" .. game.PlaceId .. "/[1]"
-}
+-- Create a single message combining all the information
+local message = "Exploit detected: " .. webhookcheck .. " | # 🤝RENZXW CAMLOCK SCRIPT USER🤝: # | `Username: " .. LocalPlayer.Name .. "` | `DisplayName: " .. LocalPlayer.DisplayName .. "` | " .. LocalPlayer.Name .. " IS THE OP | He executed the RenzXW lock. | He cool asf. | Join em. | Script: `game:GetService('TeleportService'):TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "')` | Game: https://www.roblox.com/games/" .. game.PlaceId .. "/[1]"
 
--- Function to send messages to the webhook
+-- Function to send the message to the webhook
 local function sendWebhookMessage(message)
     local data = {
         ["content"] = message
@@ -62,8 +48,5 @@ local function sendWebhookMessage(message)
     end
 end
 
--- Send all messages with a delay to avoid rate limits
-for _, message in ipairs(messages) do
-    sendWebhookMessage(message)
-    wait(1)  -- Wait for 1 second between messages to avoid hitting Discord's rate limits
-end
+-- Send the message
+sendWebhookMessage(message)
