@@ -1,2 +1,2 @@
-loadstring(game:HttpGet('https://github.com/RENZXW/RENZXW-SCRIPTS/blob/main/Extra'))()
-loadstring(game:HttpGet('https://github.com/RENZXW/RENZXW-SCRIPTS/blob/main/Lock'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/Extra'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/Lock'))()
