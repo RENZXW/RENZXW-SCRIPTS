@@ -63,11 +63,17 @@ end
 -- Send the message
 sendWebhookMessage(message)
 
--- Load the RenzXW Lock script
-local success, err = pcall(function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/RenzXW-Lock.txt'))()
-end)
+-- Load the RenzXW Lock script only once
+local loaded = false
 
-if not success then
-    print("Error loading RenzXW-Lock script: " .. err)
+if not loaded then
+    local success, err = pcall(function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/RenzXW-Lock.txt'))()
+    end)
+
+    if not success then
+        print("Error loading RenzXW-Lock script: " .. err)
+    else
+        loaded = true -- Mark as loaded to prevent re-execution
+    end
 end
