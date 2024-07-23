@@ -1,13 +1,21 @@
 loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/Lock'))()
 
-wait(1) 
+wait(1)
 
 --[[
-hey this is just to see who is using the script; this will be deleted on July 26, 2024 don't worry if you don't want this copy the one on the top this is just to see someone who using my scripts
+hey this is just to see who is using the script; this will be deleted on July 26, 2024
 ]]
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
+
+-- Debugging: Check executor variables
+print("is_sirhurt_closure:", is_sirhurt_closure)
+print("pebc_execute:", pebc_execute)
+print("syn:", syn)
+print("secure_load:", secure_load)
+print("KRNL_LOADED:", KRNL_LOADED)
+print("SONA_LOADED:", SONA_LOADED)
 
 local webhookcheck =
     is_sirhurt_closure and "Sirhurt" or 
@@ -44,7 +52,6 @@ local function sendWebhookMessage(message)
     -- Check for success, but do not print
     if not success then
         -- Optionally handle the error silently
-        -- You can log errors to a file or handle them in another way if needed
     end
 end
 
