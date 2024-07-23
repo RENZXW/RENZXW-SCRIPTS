@@ -1,6 +1,7 @@
 loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/Lock'))()
 
 wait(1)
+
 -- Made by RENZXW 
 -- https://www.youtube.com/@rexnzxw on YouTube
 
